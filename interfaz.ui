@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Calculadora de Integrales</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#MainWindow{
+
+	background-color:#4d4d4d
+}
+
+#centralwidget{	
+	background-color: #4d4d4d
+}
+
+QPushButton{
+		background-color: #636363;
+		border-radius:5px	;
+		color:white;
+		border:none;
+}
+
+QPushButton:hover{
+	background-color:#737373;
+		border:2px ;
+}</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btnCalcular">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>30</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif Collection</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#btnPrint{
+	background-color: #96adc8;
+	color: #FFFFFF;
+	border: none
+}
+
+#btnPrint:hover{
+	background-color:#7C94B0 ;
+	color:black
+}</string>
+    </property>
+    <property name="text">
+     <string>Calcular</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>411</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0" columnstretch="0,0,0,0,0">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="btn1">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="btn2">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="btnSin">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>Sin□</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="btn4">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="btn3">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="btnCuadrado">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>x²</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="btnSuma">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="btnIntegralDef">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="btnIntegral">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QPushButton" name="btnDerivada">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="btn7">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="4">
+      <widget class="QPushButton" name="btnY">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="btnParentesis">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>(□)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="btn5">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="btn6">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>6</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="btnResta">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QPushButton" name="btnCos">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>Cos□</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="btn8">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="btn9">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>9</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QPushButton" name="btnMultiplicar">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>*</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="QPushButton" name="btnTan">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>Tan□</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QPushButton" name="btnPi">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>π</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="btnRaiz">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>√□</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="btnDividir">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>÷</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="4">
+      <widget class="QPushButton" name="btnX">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>90</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="btnC">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>80</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#btnPrint{
+	background-color: green;
+	color: white;
+	border: none
+}
+
+#btnPrint:hover{
+	background-color: #87BBA2;
+	color:black
+}</string>
+    </property>
+    <property name="text">
+     <string>C</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>391</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif Collection</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#textEdit{
+	border:none;
+	border-radius:10px	;
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnCA">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>80</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#btnPrint{
+	background-color: green;
+	color: white;
+	border: none
+}
+
+#btnPrint:hover{
+	background-color: #87BBA2;
+	color:black
+}</string>
+    </property>
+    <property name="text">
+     <string>CA</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,66 @@
+Si les da error puede ser por la importacion 
+    uic.loadUi(r"C:\Users\msnlo\Documents\practice\proyectoPy\interfaz.ui", self)
+en esa parte del codigo copien el directorio de donde esta su archivo interfaz.ui 
+y lo pegan despues de la r 
+    Ejemplo 
+    uic.loadUi(r"Direccion donde esta interfaz.ui\interfaz.ui", self)
+
+hacer lo mismo con las imagenes que estan en la carpeta assets   
+
+
+## Nombre de botones 
+
+btnCalcular
+btn1
+btn2
+btn3
+btn3
+btn4
+btn5
+btn6
+btn7
+btn8
+btn9
+
+btnSin
+btnCos
+btnTan
+
+btnCuadrado
+btnSuma
+btnResta
+btnIntegralDef
+btnIntegral
+btnDerivada
+btnX
+btnY
+
+btnParentesis
+btnMultiplicar
+btnPi
+btnRaiz
+btnDividir
+btnC
+btnCA
+
+### Texto
+textEdit
+
+## Para referirse a un boton y usar eventos se utiliza
+
+self.NombreDelBoton
+    Ejemplo
+self.btnC 
+
+## Para usar funciones cuando le das click a un boton
+
+self.nombreDelBoton.clicked.connect(self.nombreDeFuncion)
+    Ejemplo
+
+self.btnC.clicked.connect(self.hola)
+
+!! la funcion que utilices tiene que tener el parametro self
+    Ejemplo
+
+    def hola(self):
+    print("Hola mundo")
