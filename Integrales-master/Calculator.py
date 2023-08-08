@@ -21,14 +21,24 @@ class Ventana(QMainWindow):
         # Variable para almacenar el contenido de la pantalla
         self.pantalla = ""
 
-        # Conectar botones 1, 2, 3, 4 y 5 a sus funciones correspondientes
+        #Botones de Liam
         self.btn1.clicked.connect(lambda: self.agregar_contenido("1"))
         self.btn2.clicked.connect(lambda: self.agregar_contenido("2"))
         self.btn3.clicked.connect(lambda: self.agregar_contenido("3"))
         self.btn4.clicked.connect(lambda: self.agregar_contenido("4"))
         self.btn5.clicked.connect(lambda: self.agregar_contenido("5"))
 
-    # Modificaciones para agregar funcionalidad a los botones 1, 2, 3, 4 y 5
+        #Botones de Hilari
+        self.btnY.clicked.connect(lambda: self.agregar_contenido("Y"))
+        self.btnX.clicked.connect(lambda: self.agregar_contenido("X"))
+        self.btnSuma.clicked.connect(lambda: self.agregar_contenido("+"))
+        self.btnResta.clicked.connect(lambda: self.agregar_contenido("-"))
+        self.btnMultiplicar.clicked.connect(lambda: self.agregar_contenido("*"))
+        self.btnDividir.clicked.connect(lambda: self.agregar_contenido("÷"))
+        self.btnRaiz.clicked.connect(lambda: self.agregar_contenido(" √"))
+        self.btnCuadrado.clicked.connect(lambda: self.agregar_contenido("^"))
+
+    # Modificaciones para agregar funcionalidad a los botones
     def agregar_contenido(self, valor):
         self.pantalla += valor
         self.textEdit.setText(self.pantalla)
@@ -50,7 +60,7 @@ class Ventana(QMainWindow):
             # Eliminar el último carácter de la cadena
             contenido = contenido[:-1]
             self.textEdit.setText(contenido)
-            
+
             # Actualizar la variable pantalla después de eliminar el carácter
             self.pantalla = contenido
 
@@ -58,8 +68,4 @@ class Ventana(QMainWindow):
         self.textEdit.clear()  
         self.pantalla = ""  
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    GUI = Ventana()
-    GUI.show()
-    sys.exit(app.exec_())
+

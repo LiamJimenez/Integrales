@@ -22,6 +22,11 @@
     <height>600</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>Sans Serif Collection</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Calculadora de Integrales</string>
   </property>
@@ -267,14 +272,14 @@ QPushButton:hover{
        <property name="font">
         <font>
          <family>Sans Serif Collection</family>
-         <pointsize>16</pointsize>
+         <pointsize>20</pointsize>
         </font>
        </property>
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="text">
-        <string>x²</string>
+        <string>^</string>
        </property>
       </widget>
      </item>
