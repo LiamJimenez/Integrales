@@ -38,6 +38,14 @@ class Ventana(QMainWindow):
         self.btnRaiz.clicked.connect(lambda: self.agregar_contenido(" √"))
         self.btnCuadrado.clicked.connect(lambda: self.agregar_contenido("^"))
 
+        #Botones de Francesco
+        self.btnSin.clicked.connect(lambda: self.agregar_contenido("Sin□"))
+        self.btnCos.clicked.connect(lambda: self.agregar_contenido("Cos□"))
+        self.btnTan.clicked.connect(lambda: self.agregar_contenido("Tan□"))
+        self.btnPi.clicked.connect(lambda: self.agregar_contenido("π"))
+        self.btnIntegralDef.clicked.connect(lambda: self.agregar_contenido("∫"))
+        self.btnIntegral.clicked.connect(lambda: self.agregar_contenido("∫"))
+
     # Modificaciones para agregar funcionalidad a los botones
     def agregar_contenido(self, valor):
         self.pantalla += valor
