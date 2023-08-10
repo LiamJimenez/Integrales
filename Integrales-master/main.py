@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from Calculator import Ventana
 
 ### integral[1,2]   "   "" "
-Operaciones = ["pi", "2", "3"]
+##Operaciones = ["pi", "2", "3"]
 ##  integral()
 
 if __name__ == "__main__":
