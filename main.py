@@ -15,7 +15,6 @@ class Ventana(QMainWindow):
          ## Anadiendo iconos a botnones
          self.btnIntegralDef.setIcon(QIcon(r"C:\Users\msnlo\Documents\practice\proyectoPy\assets\IntegralDefinida.png"))
          self.btnIntegral.setIcon(QIcon(r"C:\Users\msnlo\Documents\practice\proyectoPy\assets\Integral.png"))
-         self.btnDerivada.setIcon(QIcon(r"C:\Users\msnlo\Documents\practice\proyectoPy\assets\Derivada.png"))
           ## Botones
         
         # Limpiar con Boton C
