@@ -13,7 +13,6 @@ class Ventana(QMainWindow):
         # Añadiendo iconos a botones
         self.btnIntegralDef.setIcon(QIcon(r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\assets\IntegralDefinida.png"))
         self.btnIntegral.setIcon(QIcon(r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\assets\Integral.png"))
-        self.btnDerivada.setIcon(QIcon(r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\assets\Derivada.png"))
         # Botones
         self.btnC.clicked.connect(self.eliminar_caracter)
         self.btnCA.clicked.connect(self.limpiar_todo)
@@ -43,8 +42,51 @@ class Ventana(QMainWindow):
         self.btnCos.clicked.connect(lambda: self.agregar_contenido("Cos□"))
         self.btnTan.clicked.connect(lambda: self.agregar_contenido("Tan□"))
         self.btnPi.clicked.connect(lambda: self.agregar_contenido("π"))
-        self.btnIntegralDef.clicked.connect(lambda: self.agregar_contenido("∫"))
+        self.btnIntegralDef.clicked.connect(lambda: self.agregar_contenido("∫[ ]"))
         self.btnIntegral.clicked.connect(lambda: self.agregar_contenido("∫"))
+
+        #Botones de Jesus
+        self.btn6.clicked.connect(lambda: self.agregar_contenido("6"))
+        self.btn7.clicked.connect(lambda: self.agregar_contenido("7"))
+        self.btn8.clicked.connect(lambda: self.agregar_contenido("8"))
+        self.btn9.clicked.connect(lambda: self.agregar_contenido("9"))
+        self.btn0.clicked.connect(lambda: self.agregar_contenido("0"))
+        self.btnParentesis.clicked.connect(lambda: self.agregar_contenido("( )"))
+
+        ##Botones funcionando
+        self.btn1.clicked.connect(self.btn1F)
+        self.btn2.clicked.connect(self.btn2F)
+        self.btn3.clicked.connect(self.btn3F)
+        self.btn4.clicked.connect(self.btn4F)
+        self.btn5.clicked.connect(self.btn5F)
+        self.btn6.clicked.connect(self.btn6F)
+        self.btn7.clicked.connect(self.btn7F)
+        self.btn8.clicked.connect(self.btn8F)
+        self.btn9.clicked.connect(self.btn9F)
+
+        self.btnY.clicked.connect(self.btnYF)
+        self.btnX.clicked.connect(self.btnXF)
+        self.btnSuma.clicked.connect(self.btnSumaF)
+        self.btnbtnResta.clicked.connect(self.btnRestaF)
+        self.btnbtnResta.clicked.connect(self.btnRestaF)
+        self.btnMultiplicar.clicked.connect(self.btnMultiplicarF)
+        self.btnDividir.clicked.connect(self.btnDividirF)
+        self.btnRaiz.clicked.connect(self.btnRaizF)
+        self.btnCuadrado.clicked.connect(self.btnCuadradoF)
+
+        self.btnSin.clicked.connect(self.btnSinF)
+        self.btnCos.clicked.connect(self.btnCosF)
+        self.btnTan.clicked.connect(self.btnTanF)
+        self.btnPi.clicked.connect(self.btnPiF)
+        self.btnIntegralDef.clicked.connect(self.btnIntegralDefF)
+        self.btnIntegral.clicked.connect(self.btnIntegralF)
+
+        self.btn6.clicked.connect(self.btn6F)
+        self.btn7.clicked.connect(self.btn7F)
+        self.btn8.clicked.connect(self.btn8F)
+        self.btn9.clicked.connect(self.btn9F)
+        self.btn0.clicked.connect(self.btn0F)
+        self.btnParentesis.clicked.connect(self.btnParentesisf)
 
     # Modificaciones para agregar funcionalidad a los botones
     def agregar_contenido(self, valor):
