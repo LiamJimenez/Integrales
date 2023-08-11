@@ -3,18 +3,28 @@ from PyQt5 import uic
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from sympy import sympify
+import sympy as sp
+import math
+from sympy import integrate, init_printing
+from sympy.abc import x
+
 
 class Ventana(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        uic.loadUi(r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\interfaz.ui", self)
-        
+        uic.loadUi(
+            r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\interfaz.ui", self)
+
         # Print
         self.btnCalcular.clicked.connect(self.calcular_resultado)
         # Añadiendo iconos a botones
-        self.btnIntegralDef.setIcon(QIcon(r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\assets\IntegralDefinida.png"))
-        self.btnIntegral.setIcon(QIcon(r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\assets\Integral.png"))
+        self.btnIntegralDef.setIcon(QIcon(
+            r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\assets\IntegralDefinida.png"))
+        self.btnIntegral.setIcon(QIcon(
+            r"c:\Users\Admin\OneDrive\Escritorio\Integrales_Proyect\Integrales-master\assets\Integral.png"))
         
+    
+
         # Botones
         self.btnC.clicked.connect(self.eliminar_caracter)
         self.btnCA.clicked.connect(self.limpiar_todo)
@@ -50,7 +60,7 @@ class Ventana(QMainWindow):
         self.btnDividir.clicked.connect(self.btnDividirF)
         self.btnRaiz.clicked.connect(self.btnRaizF)
         self.btnCuadrado.clicked.connect(self.btnCuadradoF)
-        
+
         # Botones de Francesco
         self.btnPi.clicked.connect(self.btnPiF)
         self.btnSin.clicked.connect(self.btnSinF)
@@ -58,8 +68,8 @@ class Ventana(QMainWindow):
         self.btnCos.clicked.connect(self.btnCosF)
         self.btnIntegral.clicked.connect(self.btnIntegralF)
         self.btnIntegralDef.clicked.connect(self.btnIntegralDefF)
-      
-    #Funciones para agregar botones a la lista
+
+    # Funciones para agregar botones a la lista
     def agregar_a_operaciones(self, boton):
         self.operaciones.append(boton.text())
         print("Operaciones:", self.operaciones)
@@ -113,7 +123,6 @@ class Ventana(QMainWindow):
             self.agregar_contenido("(")
         self.agregar_a_operaciones(self.btnParentesis)
 
-
     def btnYF(self):
         self.agregar_contenido("Y")
         self.agregar_a_operaciones(self.btnY)
@@ -125,7 +134,7 @@ class Ventana(QMainWindow):
     def btnPiF(self):
         self.agregar_contenido("π")
         self.agregar_a_operaciones(self.btnPi)
-        
+
     def btnRestaF(self):
         self.agregar_contenido("-")
         self.agregar_a_operaciones(self.btnResta)
@@ -143,13 +152,13 @@ class Ventana(QMainWindow):
         self.agregar_a_operaciones(self.btnDividir)
 
     def btnRaizF(self):
-       self.agregar_contenido("√")
-       self.agregar_a_operaciones(self.btnRaiz)
+        self.agregar_contenido("√")
+        self.agregar_a_operaciones(self.btnRaiz)
 
     def btnCuadradoF(self):
         self.agregar_contenido("^")
         self.agregar_a_operaciones(self.btnCuadrado)
-     
+
     def btnSinF(self):
         self.agregar_contenido("Sin")
         self.agregar_a_operaciones(self.btnSin)
@@ -168,26 +177,26 @@ class Ventana(QMainWindow):
 
     def btnIntegralDefF(self):
         if self.pantalla.endswith("∫["):
-            self.agregar_contenido("]")  
+            self.agregar_contenido("]")
         elif self.pantalla and self.pantalla[-1] == "]":
-            self.agregar_contenido("")  
+            self.agregar_contenido("")
         elif self.pantalla and self.pantalla[-1].isdigit():
-            self.agregar_contenido("]")  
+            self.agregar_contenido("]")
         else:
-            self.agregar_contenido("∫[")  
+            self.agregar_contenido("∫[")
         self.agregar_a_operaciones(self.btnIntegralDef)
-    
-    #Agregar Contenido a la pantalla
+
+    # Agregar Contenido a la pantalla
     def agregar_contenido(self, valor):
         self.pantalla += valor
         self.textEdit.setText(self.pantalla)
 
-    #Limpiar Pantalla
+    # Limpiar Pantalla
     def limpiar(self):
         self.pantalla = ""
-        self.textEdit.clear()  
+        self.textEdit.clear()
 
-    #Eliminar un caracter cuando le de la boton C
+    # Eliminar un caracter cuando le de la boton C
     def eliminar_caracter(self):
         contenido = self.textEdit.text()
         if contenido:
@@ -195,18 +204,57 @@ class Ventana(QMainWindow):
             self.textEdit.setText(contenido)
             self.pantalla = contenido
 
-    #Eliminar todo cuando le de al boton CA
+    # Eliminar todo cuando le de al boton CA
     def limpiar_todo(self):
         self.textEdit.clear()
         self.pantalla = ""
 
-    #Calcular resultado
     def calcular_resultado(self):
         expresion = self.pantalla
-        try:
-            resultado = eval(expresion)  
-            self.textEdit.setText(str(resultado))  
-        except Exception as e:
-            self.textEdit.setText("Error")  
-            print("Error:", e)
+        if '+' in expresion:
+            partes = expresion.split('+')
+            numeros = [float(part.strip()) for part in partes]
+            resultado = sum(numeros)
+        elif '-' in expresion:
+            partes = expresion.split('-')
+            numeros = [float(part.strip()) for part in partes]
+            resultado = numeros[0] - sum(numeros[1:])
+        elif '*' in expresion:
+            partes = expresion.split('*')
+            numeros = [float(part.strip()) for part in partes]
+            resultado = 1.0
+            for num in numeros:
+                resultado *= num
+        elif '/' in expresion:
+            partes = expresion.split('/')
+            numeros = [float(part.strip()) for part in partes]
+            resultado = numeros[0] / float(numeros[1])
+        elif '^' in expresion:
+            base, exponente = expresion.split('^')
+            resultado = float(base) ** float(exponente)
+        elif '√' in expresion:
+            radicando = expresion.split('√')[1]
+            resultado = float(radicando) ** 0.5
+        elif '∫' in expresion:
+            variable_simb = sp.symbols('x')
+            integrando = expresion.split('∫')[1]
+            resultado = sp.integrate(integrando, variable_simb)
+        elif 'Sin(' in expresion:
+            angulo = expresion.split('Sin(')[1][:-1]
+            resultado = math.sin(float(angulo))
+        elif 'Cos(' in expresion:
+            angulo = expresion.split('Cos(')[1][:-1]
+            resultado = math.cos(float(angulo))
+        elif 'Tan(' in expresion:
+            angulo = expresion.split('Tan(')[1][:-1]
+            resultado = math.tan(float(angulo))
+        elif 'pi' in expresion:
+            resultado = math.pi
+        else:
+            resultado = None
 
+        
+        if resultado is not None:
+            self.pantalla = str(resultado)
+            self.textEdit.setText(self.pantalla)
+    
