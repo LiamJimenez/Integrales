@@ -2,6 +2,7 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QMainWindow, QApplication
+from sympy import sympify
 
 class Ventana(QMainWindow):
     def __init__(self):
@@ -208,3 +209,4 @@ class Ventana(QMainWindow):
         except Exception as e:
             self.textEdit.setText("Error")  
             print("Error:", e)
+
